@@ -25,7 +25,7 @@ export const Footer = () => {
               <a href="https://github.com/dhina4225">
                 <FaGithub className="icons" />
               </a>
-              <a href="https://www.behance.net/dinakd1">
+              <a href="https://app.netlify.com/teams/dhina4225/overview1">
                 <SiNetlify className="icons" />
               </a>
             </div>
