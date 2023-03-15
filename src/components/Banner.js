@@ -82,7 +82,7 @@ export const Banner = () => {
                   </p>
                   <button onClick={() => console.log("connect")}>
                     <a href={Contact}>
-                      Let's Connect <ArrowRightCircle size={25} />
+                      Downoad CV <ArrowRightCircle size={25} />
                     </a>
                   </button>
                 </div>

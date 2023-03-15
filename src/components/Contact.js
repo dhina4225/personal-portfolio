@@ -23,29 +23,6 @@ export const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setButtonText("Sending...");
-    let response = await fetch("http://localhost:3000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code === 200) {
-      setStatus({ succes: true, message: "Message sent successfully" });
-    } else {
-      setStatus({
-        succes: false,
-        message: "Something went wrong, please try again later.",
-      });
-    }
-  };
-
   return (
     <section className="contact" id="connect">
       <Container>
@@ -73,8 +50,8 @@ export const Contact = () => {
                 >
                   <h2>Get In Touch</h2>
                   <form
-                    onSubmit={handleSubmit}
                     action="https://getform.io/f/cd661238-9a35-43cc-8deb-7753339196fb"
+                    method="POST"
                   >
                     <Row>
                       <Col size={12} sm={6} className="px-1">
@@ -85,6 +62,7 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("firstName", e.target.value)
                           }
+                          name="firstName"
                         />
                       </Col>
                       <Col size={12} sm={6} className="px-1">
@@ -95,6 +73,7 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("lastName", e.target.value)
                           }
+                          name="lastName"
                         />
                       </Col>
                       <Col size={12} sm={6} className="px-1">
@@ -105,6 +84,7 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("email", e.target.value)
                           }
+                          name="email"
                         />
                       </Col>
                       <Col size={12} sm={6} className="px-1">
@@ -115,6 +95,7 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("phone", e.target.value)
                           }
+                          name="phone no"
                         />
                       </Col>
                       <Col size={12} className="px-1">
@@ -125,6 +106,7 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("message", e.target.value)
                           }
+                          name="message"
                         ></textarea>
                         <button type="submit">
                           <span>{buttonText}</span>
