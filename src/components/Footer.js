@@ -8,9 +8,8 @@ export const Footer = () => {
     <footer className="footer">
       <Container>
         <Row className="align-items-center">
-          {/* <MailchimpForm /> */}
           <Col size={12} sm={6}>
-            <h1>DINAKARAN </h1>
+            <h1>DINAKARAN</h1>
             <p>
               A Frontend focused Web Developer building the Frontend of Websites
               and Web Applications that leads to the success of the overall
@@ -25,7 +24,7 @@ export const Footer = () => {
               <a href="https://github.com/dhina4225">
                 <FaGithub className="icons" />
               </a>
-              <a href="https://app.netlify.com/teams/dhina4225/overview1">
+              <a href="https://app.netlify.com/teams/dhina4225/overview">
                 <SiNetlify className="icons" />
               </a>
             </div>
