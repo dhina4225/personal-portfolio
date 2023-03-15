@@ -8,74 +8,84 @@ import "animate.css";
 import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
-	const projects = [
-		{
-			title: "Flight Booking Agency",
-			description: "Design & Development",
-			imgUrl: projImg1,
-		},
-		{
-			title: "Chating Application",
-			description: "Design & Development",
-			imgUrl: projImg2,
-		},
-		{
-			title: "E-Commerce Website",
-			description: "Design & Development",
-			imgUrl: projImg3,
-		},
+  const projects = [
+    {
+      title: "Flight Booking Agency",
+      description: "Design & Development",
+      imgUrl: projImg1,
+    },
+    {
+      title: "Chating Application",
+      description: "Design & Development",
+      imgUrl: projImg2,
+    },
+    {
+      title: "E-Commerce Website",
+      description: "Design & Development",
+      imgUrl: projImg3,
+    },
+  ];
 
-	];
+  return (
+    <section className="project" id="projects">
+      <Container>
+        <Row>
+          <Col size={12}>
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
+                >
+                  <h2>Projects</h2>
+                  <p>
+                    Here you will find some of the personal projects that I
+                    created with each project containing its own case study.
+                  </p>
+                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                    <Nav
+                      variant="pills"
+                      className="nav-pills mb-5 justify-content-center align-items-center"
+                      id="pills-tab"
+                    >
+                      <Nav.Item>
+                        <Nav.Link eventKey="first">My Projects</Nav.Link>
+                      </Nav.Item>
+                    </Nav>
 
-	return (
-		<section className="project" id="projects">
-			<Container>
-				<Row>
-					<Col size={12}>
-						<TrackVisibility>
-							{({ isVisible }) => (
-								<div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-									<h2>Projects</h2>
-									<p>Project Description</p>
-									<Tab.Container id="projects-tabs" defaultActiveKey="first">
-										<Nav
-											variant="pills"
-											className="nav-pills mb-5 justify-content-center align-items-center"
-											id="pills-tab"
-										>
-											<Nav.Item>
-												<Nav.Link eventKey="first" >My Projects</Nav.Link>
-									
-
-											</Nav.Item>
-										</Nav>
-										
-										<Tab.Content
-											id="slideInUp"
-											className={isVisible ? "animate__animated animate__slideInUp" : ""}
-										>
-											<Tab.Pane eventKey="first">
-												<Row>
-													{projects.map((project, index) => {
-														return <ProjectCard key={index} {...project} />;
-													})}
-												</Row>
-											</Tab.Pane>
-											<Tab.Pane eventKey="section">
-												<p>Project Description.</p>
-											</Tab.Pane>
-											<Tab.Pane eventKey="third">
-												<p>Project Description</p>
-											</Tab.Pane>
-										</Tab.Content>
-									</Tab.Container>
-								</div>
-							)}
-						</TrackVisibility>
-					</Col>
-				</Row>
-			</Container>
-			<img className="background-image-right" src={colorSharp2} alt="Images"></img>
-		</section>
-	);
+                    <Tab.Content
+                      id="slideInUp"
+                      className={
+                        isVisible ? "animate__animated animate__slideInUp" : ""
+                      }
+                    >
+                      <Tab.Pane eventKey="first">
+                        <Row>
+                          {projects.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Row>
+                      </Tab.Pane>
+                      {/* <Tab.Pane eventKey="section">
+                        <p>Project Description.</p>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="third">
+                        <p>Project Description</p>
+                      </Tab.Pane> */}
+                    </Tab.Content>
+                  </Tab.Container>
+                </div>
+              )}
+            </TrackVisibility>
+          </Col>
+        </Row>
+      </Container>
+      <img
+        className="background-image-right"
+        src={colorSharp2}
+        alt="Images"
+      ></img>
+    </section>
+  );
 };
