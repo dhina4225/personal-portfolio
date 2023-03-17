@@ -79,9 +79,11 @@ export const NavBar = () => {
               </a>
             </div>
 
-            <button className="vvd">
-              <span>Let’s Connect</span>
-            </button>
+            <form method="get" action="">
+              <button class="myButton" type="submit">
+                Download cv
+              </button>
+            </form>
           </span>
         </Navbar.Collapse>
       </Container>
